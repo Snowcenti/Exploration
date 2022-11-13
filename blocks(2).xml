@@ -1,0 +1,755 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="#Ad(,FT%s*-isfdsO29U">welcomes</variable>
+    <variable id="X4zy!98/2$-ur;|L{NlX">red valley</variable>
+    <variable id="!#)KUG@N@`dkb|0~e.1t">pines</variable>
+  </variables>
+  <block type="s4d_login" id="Nqo54[Q|HSDaQ19p45$." x="-1217" y="-2268">
+    <value name="TOKEN">
+      <shadow type="text" id="Xv9e~+c7E8(j^dx9O:#}">
+        <field name="TEXT">OTk2OTAzNjU1MzEzNzg5MDcw.Gr3tNJ.igRB0dtIiBEn_pg84aorSKIqWRjktP1FTeWc9g</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="frost_webserver" id="c`=nd}FEa7y(y1dMv`t/" x="-1234" y="-2199">
+    <value name="URL">
+      <shadow type="text" id="7u=Bjb$wP%#0v9j^AcVN">
+        <field name="TEXT">This site was created to keep Harmony on 24/7!</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="s4d_on_message" id="Qx+aIDM=_,mj^tl$vGmW" x="-1253" y="-2049">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="Cr$f.P2*Nq2Dl}?D!r`(">
+        <value name="IF0">
+          <block type="logic_compare" id="oq-Tf{oSnv,],{N*FSF|">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_message_content" id="pyFMNvR6J#o6Ky/UA~]f"></block>
+            </value>
+            <value name="B">
+              <block type="text" id=";[??XKp36YJf2U}j2_}e">
+                <field name="TEXT">h!ping</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_reply" id="wgo^7yFoMz,K{AaMl6L)">
+            <value name="CONTENT">
+              <block type="text" id="N-4C!JnJCe,s$75i%8Ce">
+                <field name="TEXT">pong!</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="bt[F8^;aOE7GU?5$a)?w" x="-637" y="-2032">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="y[Zd4^IR3GK!s?44|!~X">
+        <comment pinned="false" h="80" w="160">This will set your ticket channel to mentioned channel</comment>
+        <value name="IF0">
+          <block type="s4d_starts_with" id="2G5n|2auP|5Yf`O:d2WQ">
+            <value name="STRING">
+              <shadow type="text" id="%7xut+8PnbWP#Pl%W5b9">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="s4d_message_content" id="^=WIpv_,R6^HwC3dx|9Q"></block>
+            </value>
+            <value name="SUBSTRING">
+              <shadow type="text" id="e#!fvp_D+yKP+-rdlh+L">
+                <field name="TEXT">h!ticket</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_try_and_catch" id="0ks@]Hu/j7Api;h46E^q">
+            <statement name="try">
+              <block type="ticket_setup" id="1O(xq,Qa9*)5@pU}vLuc">
+                <next>
+                  <block type="s4d_reply" id="L:)RsJnX;`P7*ZAkGi1{">
+                    <value name="CONTENT">
+                      <shadow type="text" id="r01@NRfXm{ZMCR$9-*XM">
+                        <field name="TEXT"></field>
+                      </shadow>
+                      <block type="text_join" id="1FR!af{Nk;$QG_stV]8e">
+                        <mutation items="4"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="!Bw+#YB+5v!$A8H(W[_R">
+                            <field name="TEXT">I have set the ticket channel to </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="text" id=".nOMw^hI$n5t.0QPy1(L">
+                            <field name="TEXT">&lt;#</field>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="s4d_mentioned_channel" id="-BtOp3iN:?9q_i|Yo9i3"></block>
+                        </value>
+                        <value name="ADD3">
+                          <block type="text" id="Ir4(LeW_6~Gt%xHUuJqZ">
+                            <field name="TEXT">&gt;</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="catch">
+              <block type="s4d_reply" id="p-%]v*]`QLgQ-J}|Pk$K">
+                <value name="CONTENT">
+                  <shadow type="text" id="pfZh_Hg]u8rj/i_X.ELo">
+                    <field name="TEXT">You need to mention a channel!</field>
+                  </shadow>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="?mr%Ub*ms2Yp+]3T+qfd">
+            <value name="IF0">
+              <block type="s4d_starts_with" id="ctqsn|fbW-jw#E(IZdVZ">
+                <value name="STRING">
+                  <shadow type="text" id="s~:uj}-{4W*2GjwvpG+?">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="s4d_message_content" id="rB_li[eh]u.9tu,VY);{"></block>
+                </value>
+                <value name="SUBSTRING">
+                  <shadow type="text" id="#4om-]$S|p[mQ3JiK=Ws">
+                    <field name="TEXT">h!close</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="close_ticket" id="W[~-[a^vvknhCzQys7kb">
+                <next>
+                  <block type="s4d_reply" id="0]J:hj-UMM`ZMA;_wY7T">
+                    <value name="CONTENT">
+                      <shadow type="text" id="PV3cX()t%o7pjPgqj7So">
+                        <field name="TEXT">Closed the ticket</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="Ofy*%,F*0JFl_:{BI({7">
+                <value name="IF0">
+                  <block type="s4d_starts_with" id="WZgYgk(DYiCxFgNpOW:T">
+                    <value name="STRING">
+                      <shadow type="text" id="30Qi]$acE`pk7TqzwxX8">
+                        <field name="TEXT">abc</field>
+                      </shadow>
+                      <block type="s4d_message_content" id="gp.~ymuL0s(nR1Hx$`$u"></block>
+                    </value>
+                    <value name="SUBSTRING">
+                      <shadow type="text" id="0n$S=n3X=V0X`sC5,5o`">
+                        <field name="TEXT">h!archive</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="s4d_reply" id="pd:A/9P#A%3)^7{d%pL}">
+                    <value name="CONTENT">
+                      <shadow type="text" id=",XjDz-hEJY2MWocvgb.$">
+                        <field name="TEXT">Archived the ticket</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="archieve_ticket" id="m83(3{!K^{9%H,UQLVO5"></block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="eUSuB)~`4yb|0(4Wt.hh">
+                    <value name="IF0">
+                      <block type="s4d_starts_with" id=".?xl*AT#1?}+S-{=`aTL">
+                        <value name="STRING">
+                          <shadow type="text" id="vAWRO(j,ftTyt-6f7$[L">
+                            <field name="TEXT">abc</field>
+                          </shadow>
+                          <block type="s4d_message_content" id="]38WQz9SWk%OaB]PIH~S"></block>
+                        </value>
+                        <value name="SUBSTRING">
+                          <shadow type="text" id="uG}OnYeHs40OBytm{Axb">
+                            <field name="TEXT">h!unarchive</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="s4d_reply" id=",iAE;YZ+n^~tuocAL5Bp">
+                        <value name="CONTENT">
+                          <shadow type="text" id=":(18p$StLXkpo$QC~5lS">
+                            <field name="TEXT">Unarchived the ticket</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="unarchieve_ticket" id="2cY6`W,%Qbc8;KvlJ~gf"></block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_member_join" id="H$`}^}-}CrwC[xsqPM~," x="-1480" y="-1740">
+    <statement name="STATEMENTS">
+      <block type="s4d_run_save_output" id="ij%0_zG|#{qWrNIm]1~+">
+        <field name="VAR" id="#Ad(,FT%s*-isfdsO29U">welcomes</field>
+        <statement name="STATEMENT">
+          <block type="s4d_wait_seconds" id="HEx%U/(TN9,,TmI[+}u.">
+            <value name="TIME">
+              <shadow type="math_number" id="KUr%^N~MqwLpe)up5bsa">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="s4d_send_channel" id="f#%c;*-#M9%iu4yuVVI6">
+                <value name="CONTENT">
+                  <block type="text_join" id="H$}FQ_w*qY,CuPsZ0`h.">
+                    <mutation items="5"></mutation>
+                    <value name="ADD0">
+                      <block type="jg_text_remake_paragraph_quotes" id="K4f3RF!xS%4vZ=1-|9h)">
+                        <field name="TEXT">Welcome &lt;@</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="s4d_member_id" id=":vMJP790IYRU)-guCG^r">
+                        <value name="MEMBER">
+                          <block type="s4d_joining_member" id="@2!x2@C19vtM@eS^Y83Y"></block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="jg_text_remake_paragraph_quotes" id=",~yOTP,rK(_),ZV`Q@cq">
+                        <field name="TEXT">&gt; to **</field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="s4d_server_name" id="|(YdpGM=Q,~IT@lo$DF:">
+                        <value name="SERVER">
+                          <block type="s4d_joining_guild" id="KIcNm$$e~`V9l-%EFmiZ"></block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="ADD4">
+                      <block type="jg_text_remake_paragraph_quotes" id="unC[.6n,)KBdX/KLo?,j">
+                        <field name="TEXT">**! Please make sure to fill out an &lt;#694040065357250651&gt;&lt;:cattoblush:805860428365430784&gt;</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="CHANNEL">
+                  <block type="frost_category_get" id="RDj7s!QlP9vZs?I{}LDY">
+                    <field name="SEARCH_TYPE">NAME</field>
+                    <value name="VALUE">
+                      <block type="jg_text_remake_paragraph_quotes" id="o1@8;:b/=y.D0$Lw/0Rs">
+                        <field name="TEXT">general</field>
+                      </block>
+                    </value>
+                    <value name="SERVER">
+                      <block type="s4d_joining_guild" id="Z@^YY]?z^mAvJvZaL%D="></block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="~jn%PTK,{`v.MbQ6z].(" x="-2096" y="-573">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="34s+$!vr`ERcQ)ESCuZ=">
+        <value name="IF0">
+          <block type="logic_negate" id="7.DwGeU9I.OA7*.b8+YT">
+            <value name="BOOL">
+              <block type="s4d_member_is_bot" id="K!G5JwAJkF(OmZ,@v9OU">
+                <value name="MEMBER">
+                  <block type="s4d_message_author" id="pRoeWA$9z4uGdEtL~GEp"></block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="controls_if" id="s@=Dpy$I0!ft9M2$+HRV">
+            <value name="IF0">
+              <block type="logic_compare" id="v*To^c@v78+`wf1t%4_m">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="s4d_message_content" id="ntGHmPF,H3M*{ROzH9M3"></block>
+                </value>
+                <value name="B">
+                  <block type="text" id="?-O?rx-i0n[_C%yEg}Q}">
+                    <field name="TEXT">h!redvalley</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="variables_set" id="INW(!Pxdj.@/b_uxEe`7">
+                <field name="VAR" id="X4zy!98/2$-ur;|L{NlX">red valley</field>
+                <value name="VALUE">
+                  <block type="lists_create_with" id="cqa@,[el3=IX4~,_=!7,">
+                    <mutation items="31"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="-UOz/}|o.9#r)4-!}?8|">
+                        <field name="TEXT">You find some **Moss** under a bush!</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="text" id=".O5esh.T`HvZ$JB3uNSi">
+                        <field name="TEXT">Feeling the texture under your paws change, you find some **Moss**!</field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="text" id="s3Bu^)gln,BuO=fD-my4">
+                        <field name="TEXT">You pounce towards a mouse! Oh wait… Its actually a **Stone**.</field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="jg_text_remake_paragraph_quotes" id="0Q!mY75{=`grD]ZYp$uA">
+                        <field name="TEXT">Not able to find much, you grab a **Stone** out of the grass.&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD4">
+                      <block type="jg_text_remake_paragraph_quotes" id="#.9i9;wk;%^6JMz83uR?">
+                        <field name="TEXT">You pull a branch off of a bush, but it breaks in your mouth. Now you have a **Stick**!&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD5">
+                      <block type="jg_text_remake_paragraph_quotes" id="$!:tD1sjTe9v%3eQTf2A">
+                        <field name="TEXT">You find a **Stick** in the grass.&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD6">
+                      <block type="jg_text_remake_paragraph_quotes" id="l:nHBaxwwnxzoF-,GV+x">
+                        <field name="TEXT">You caught… a **Leaf**! Good try!&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD7">
+                      <block type="jg_text_remake_paragraph_quotes" id="JBgOUjXOHY)x4BqiJrD=">
+                        <field name="TEXT">Thinking you’ve found some herbs, you pick up a **Leaf**! &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD8">
+                      <block type="jg_text_remake_paragraph_quotes" id="B*6uFoUFwZjr9`tB/_ti">
+                        <field name="TEXT">You’ve found some **Gunk!** </field>
+                      </block>
+                    </value>
+                    <value name="ADD9">
+                      <block type="jg_text_remake_paragraph_quotes" id="pth0B+1+6iGRyoPE`[l(">
+                        <field name="TEXT">You lift up a rock and find some **Gunk**... This is useless!</field>
+                      </block>
+                    </value>
+                    <value name="ADD10">
+                      <block type="jg_text_remake_paragraph_quotes" id="AB{|eEw?VEL4{u)aJTRF">
+                        <field name="TEXT">Running! Running! And it’s down! You’ve caught yourself a **Rabbit**! &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD11">
+                      <block type="jg_text_remake_paragraph_quotes" id="{*2r92)ZaCjC=!P,UVvI">
+                        <field name="TEXT">Following a soft rattling sound, you manage to catch yourself a **Snake**!&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD12">
+                      <block type="jg_text_remake_paragraph_quotes" id="vL_2xgB?)#dc}p#h/VTW">
+                        <field name="TEXT">As you sniff the air a silly little **Mouse** runs right into your paw, yum!&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD13">
+                      <block type="jg_text_remake_paragraph_quotes" id="!|+tP(CEau{YPqp?|uk{">
+                        <field name="TEXT">You dart though the grass and catch yourself a **Mouse**.</field>
+                      </block>
+                    </value>
+                    <value name="ADD14">
+                      <block type="jg_text_remake_paragraph_quotes" id="uRUF5@Zt!zbp9FPs%7}l">
+                        <field name="TEXT">Pushing a rock over, you find a pretty **Lizard** hiding underneath. You’re coming home with me, little guy!&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD15">
+                      <block type="jg_text_remake_paragraph_quotes" id="^Dtm;NU{q|]bcJ[?L$rx">
+                        <field name="TEXT">As it flies overhead you leap up and catch a **Small Bird**. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD16">
+                      <block type="jg_text_remake_paragraph_quotes" id="dj343R@DG`ENP*L9r*V;">
+                        <field name="TEXT">You run out from a bush and scare a **Small Bird**. If only it was faster than you!&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD17">
+                      <block type="jg_text_remake_paragraph_quotes" id="lj*{*/-:p=]y3r/LIAyH">
+                        <field name="TEXT">You run towards something bright in the grass only to find rotting **Carrion**... gross!</field>
+                      </block>
+                    </value>
+                    <value name="ADD18">
+                      <block type="jg_text_remake_paragraph_quotes" id="QT.OZ-d:2al+Id%kgyOt">
+                        <field name="TEXT">Trying to find any prey, all you smell is some **Carrion**. Maybe it's time to head home.&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD19">
+                      <block type="jg_text_remake_paragraph_quotes" id="T$nG@9{=_Z)[hQ*tH}=b">
+                        <field name="TEXT">You run towards what looks like lavender, but it's actually a budding **Catmint** plant! The herbalists might want some of this!&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD20">
+                      <block type="jg_text_remake_paragraph_quotes" id="BwPwHUa0_Q8`%sSaS0wV">
+                        <field name="TEXT">Is that tree roots at your feet? Nope, it's just some big **Burdock Root**&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD21">
+                      <block type="jg_text_remake_paragraph_quotes" id="0-`#oO,`1l|?1Ljg.GPY">
+                        <field name="TEXT">A big leaf hits your face, and you realize it's a burdock plant! Perfect time to gather some **Burdock Root**!&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD22">
+                      <block type="jg_text_remake_paragraph_quotes" id="l-gW7]?7NDf=ke.=8K9*">
+                        <field name="TEXT">You carefully pick up some **Cobwebs** off a rock.&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD23">
+                      <block type="jg_text_remake_paragraph_quotes" id="8G3?x~k/.Nn_}io7NqMV">
+                        <field name="TEXT">You almost walk straight through some **Cobwebs** while hiding in a bush.</field>
+                      </block>
+                    </value>
+                    <value name="ADD24">
+                      <block type="jg_text_remake_paragraph_quotes" id=":N$_0r#D~6,:AQoH{E=Q">
+                        <field name="TEXT">You see something bright in the distance, finding yourself a **Pretty Flower**.&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD25">
+                      <block type="jg_text_remake_paragraph_quotes" id="n9C4{83?HH]T(KU6Oj^K">
+                        <field name="TEXT">You roll around in some **Flowers**! Might as well take one home!&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD26">
+                      <block type="jg_text_remake_paragraph_quotes" id="YMw5H?mHz4r!dG1vs*ne">
+                        <field name="TEXT">You miss your catch *flighty*, but end up pulling out a **Feather**!&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD27">
+                      <block type="jg_text_remake_paragraph_quotes" id="][8DK#4]Pk%|=v1u2,8(">
+                        <field name="TEXT">You find a **Feather** in the grass.&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD28">
+                      <block type="jg_text_remake_paragraph_quotes" id="f6kSUe^ri})x/l7M1{=q">
+                        <field name="TEXT">While trying to find herbs you find some **Small Flowers** instead.&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD29">
+                      <block type="jg_text_remake_paragraph_quotes" id=".y~k9h4kd!K$s4HIW8WQ">
+                        <field name="TEXT">You find some **Bone Shards** in what remains of an eaten carrion. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD30">
+                      <block type="jg_text_remake_paragraph_quotes" id="JG@=G*#34MzCYd.||f4v">
+                        <field name="TEXT">You can't find any prey, only some **Bone Shards**. Creepy.&amp;#10;</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="s4d_reply" id=";z^a[,J%NQoGX{1`}_75">
+                    <value name="CONTENT">
+                      <shadow type="text" id="4QK93;l-jyq7deQ-1A|U">
+                        <field name="TEXT">Hey!</field>
+                      </shadow>
+                      <block type="lists_getIndex" id="(F{c(t{q8t|,BWc3?+4;">
+                        <mutation statement="false" at="false"></mutation>
+                        <field name="MODE">GET</field>
+                        <field name="WHERE">RANDOM</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="^~j_pBl?-L;qOE)~e[^D">
+                            <field name="VAR" id="X4zy!98/2$-ur;|L{NlX">red valley</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="44GP^xlBx^qMI^RYG!S5" x="-1173" y="-565">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id=")yA*8{c(X}jl^ZIa]Zds">
+        <value name="IF0">
+          <block type="logic_negate" id="a9c-V{qt^j!oxi4R?u)P">
+            <value name="BOOL">
+              <block type="s4d_member_is_bot" id="LR3l,LG.:C)frz^I}#8I">
+                <value name="MEMBER">
+                  <block type="s4d_message_author" id="g2Z.ed0jIi~gio3l*{6V"></block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="controls_if" id="|Y6o^}#v3Hy|eRsYyfcL">
+            <value name="IF0">
+              <block type="logic_compare" id="=u*[{wsb^]A|CDu1]#B*">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="s4d_message_content" id=",`tQu*ZKp~egiew#TjXQ"></block>
+                </value>
+                <value name="B">
+                  <block type="text" id="/xwjXDhZtSi/]ldZuW*y">
+                    <field name="TEXT">h!pines</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="variables_set" id="iv$?ym{(jS8L|uY|03=t">
+                <field name="VAR" id="!#)KUG@N@`dkb|0~e.1t">pines</field>
+                <value name="VALUE">
+                  <block type="lists_create_with" id="pyLwAc_vh{Rd2i}]N|Zn">
+                    <mutation items="39"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="[DNj:F|*C?{~nCBE#bju">
+                        <field name="TEXT">&gt;&gt;&gt;You notice a weird lump on the ground, while inspecting it you realize that it’s a **Moss Cluster!**</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="text" id="afFqma9cXU@9i|Pk:JKL">
+                        <field name="TEXT">&gt;&gt;&gt;While walking you trip over a **Leafy Branch!** Watch where you are going. </field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="text" id="3nfI)?e)`$/w~DEUh~m?">
+                        <field name="TEXT">&gt;&gt;&gt;Walking up to a tree, you dig your claws into some **Moss** that was resting on the side of it! </field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="jg_text_remake_paragraph_quotes" id="DGvs;CxZ@fj[w`oi3,E-">
+                        <field name="TEXT">&gt;&gt;&gt;While looking for prey you find **Moss** instead! It’s not going to fill your belly but you take it anyways. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD4">
+                      <block type="jg_text_remake_paragraph_quotes" id="Mnp}k.1@qffr1*d0}Gb]">
+                        <field name="TEXT">&gt;&gt;&gt;While scratching your claws on a tree some **Bark** comes off!&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD5">
+                      <block type="jg_text_remake_paragraph_quotes" id="Kc6*qjHqa.(RHkSkm85A">
+                        <field name="TEXT">&gt;&gt;&gt;While walking you notice a piece of **Bark** peeling from a tree, you take it!&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD6">
+                      <block type="jg_text_remake_paragraph_quotes" id="R3*Dj34J]U5?}n4!`@3+">
+                        <field name="TEXT">&gt;&gt;&gt;As you’re walking something glitters, you realize it’s just a **Stone.** &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD7">
+                      <block type="jg_text_remake_paragraph_quotes" id="j+yb.zIk;oX#(;`VKU2^">
+                        <field name="TEXT">&gt;&gt;&gt;You stare at an oddly shaped **Stone** for a while before deciding to take it.&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD8">
+                      <block type="jg_text_remake_paragraph_quotes" id="`[NNcd_leDMU^vRt3o#D">
+                        <field name="TEXT">&gt;&gt;&gt;You found a really pointy **Stick!** Be careful with it.&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD9">
+                      <block type="jg_text_remake_paragraph_quotes" id="zTzyMlK2_LD}l-NjdM3C">
+                        <field name="TEXT">&gt;&gt;&gt;You get hit in the head with a falling **Stick!** You keep it as revenge.</field>
+                      </block>
+                    </value>
+                    <value name="ADD10">
+                      <block type="jg_text_remake_paragraph_quotes" id="T4/squImtv/jBZ{V=x#b">
+                        <field name="TEXT">&gt;&gt;&gt;While playing you notice a pretty **Leaf!** &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD11">
+                      <block type="jg_text_remake_paragraph_quotes" id="T7[,3br(n|EbLk04+ic|">
+                        <field name="TEXT">&gt;&gt;&gt;You pull on a branch and get a mouthful of leaves, you pick the driest **Leaf.**&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD12">
+                      <block type="jg_text_remake_paragraph_quotes" id="!;dW=*@`Fqr0?K@A(OcX">
+                        <field name="TEXT">&gt;&gt;&gt;While running you step in some **Gunk** ew! It’s stuck to your fur.&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD13">
+                      <block type="jg_text_remake_paragraph_quotes" id="#n.:8`:gP;y`aN0,}zO|">
+                        <field name="TEXT">&gt;&gt;&gt;You stick your paw in a hole and get a pawfull of **Gunk!** Why?&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD14">
+                      <block type="jg_text_remake_paragraph_quotes" id="VkWIIhz}ydA/N*7+}AWW">
+                        <field name="TEXT">&gt;&gt;&gt;While walking you find some **Pebbles!** Why are they here? &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD15">
+                      <block type="jg_text_remake_paragraph_quotes" id="+Z%oB`Yk%9Ndgsl%!(nd">
+                        <field name="TEXT">&gt;&gt;&gt;You find a bunch of **Pebbles** by stepping on them! Ouch.&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD16">
+                      <block type="jg_text_remake_paragraph_quotes" id="RBOv+RwBF8Xh|quv=iCR">
+                        <field name="TEXT">&gt;&gt;&gt;Something screeches in your ear, out of panic you attack! Somehow you managed to kill a **Large Bird**, you say you were confident.</field>
+                      </block>
+                    </value>
+                    <value name="ADD17">
+                      <block type="jg_text_remake_paragraph_quotes" id="4%RlH$?a:~5R6uwq_bo2">
+                        <field name="TEXT">&gt;&gt;&gt;Your belly rumbles, it’s time to hunt! You go and catch a **Mouse**. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD18">
+                      <block type="jg_text_remake_paragraph_quotes" id="y/f)goFczpsy/PL1A-?+">
+                        <field name="TEXT">&gt;&gt;&gt;You’re enjoying your day when you find a dead **Mouse**, cool.&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD19">
+                      <block type="jg_text_remake_paragraph_quotes" id="zy{^D=^Z4XQB6Bbn|^|9">
+                        <field name="TEXT">&gt;&gt;&gt;While walking you hear something, you pounce! You catch a **Small Bird**. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD20">
+                      <block type="jg_text_remake_paragraph_quotes" id="xeVP:7SGCnO$?fW:7x,D">
+                        <field name="TEXT">&gt;&gt;&gt;While hunting you catch a **Small Bird** it’s not too impressive but will be a nice snack.&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD21">
+                      <block type="jg_text_remake_paragraph_quotes" id="[RdFaV?,=^zpk8o.))J?">
+                        <field name="TEXT">&gt;&gt;&gt;You smell something rotting, it’s leftover **Carrion**. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD22">
+                      <block type="jg_text_remake_paragraph_quotes" id="Hh-R$WK-+GfoG0;LGw3B">
+                        <field name="TEXT">&gt;&gt;&gt;You find **Carrion** and cringe.&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD23">
+                      <block type="jg_text_remake_paragraph_quotes" id="PuoP!$Carg19Xl#.6v_d">
+                        <field name="TEXT">&gt;&gt;&gt;You smell something GOOD, going for it you realize it’s **Catmint**, you keep it for yourself. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD24">
+                      <block type="jg_text_remake_paragraph_quotes" id="ukRfDGxxkY*rVcNjLXXe">
+                        <field name="TEXT">&gt;&gt;&gt;While foraging you find some **Borage**. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD25">
+                      <block type="jg_text_remake_paragraph_quotes" id="Q6?h4[3@Eua-`e2+gG1a">
+                        <field name="TEXT">&gt;&gt;&gt;You’re unsure of what this plant is, but you take it anyways. You got **Borage!** &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD26">
+                      <block type="jg_text_remake_paragraph_quotes" id="q$}^#iPy8HkzDI8w`H#6">
+                        <field name="TEXT">&gt;&gt;&gt;You walk right through **Cobweb!** Well that’s one way to collect it. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD27">
+                      <block type="jg_text_remake_paragraph_quotes" id="c#A57q@_c^CTP|l1s/!4">
+                        <field name="TEXT">&gt;&gt;&gt;You notice **Cobweb** and admire it’s intricacies before collecting it. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD28">
+                      <block type="jg_text_remake_paragraph_quotes" id="ap^VIx?ER#E(Y/w6SoRH">
+                        <field name="TEXT">&gt;&gt;&gt;As your walking you step in a pile of **Poppy Seeds** interesting. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD29">
+                      <block type="jg_text_remake_paragraph_quotes" id="rcg272.Dw,Fl{j-JUh24">
+                        <field name="TEXT">&gt;&gt;&gt;You see a broken flower, you collect **Poppy Seeds**. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD30">
+                      <block type="jg_text_remake_paragraph_quotes" id="i57p;)sz:hgs!npf7Y;V">
+                        <field name="TEXT">&gt;&gt;&gt;While walking a **Pretty Flower** catches your eye, you can’t help yourself and you take it. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD31">
+                      <block type="jg_text_remake_paragraph_quotes" id=".1Sz9%1V_73zdAjYk|=X">
+                        <field name="TEXT">&gt;&gt;&gt;While walking you hear a crunch under your paw, you stepped on **Bones.** &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD32">
+                      <block type="jg_text_remake_paragraph_quotes" id="yX%uduyzS{+U6?J]VAUU">
+                        <field name="TEXT">&gt;&gt;&gt;You see **Bones** sticking out from underneath some leaves and take them. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD33">
+                      <block type="jg_text_remake_paragraph_quotes" id="FPCzo%GJu+^IKL+aJbLy">
+                        <field name="TEXT">&gt;&gt;&gt;You hear wings above you and look up, a **Feather** floats down onto your nose. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD34">
+                      <block type="jg_text_remake_paragraph_quotes" id="0s%$vi5]o:$/Qw-t(hu2">
+                        <field name="TEXT">&gt;&gt;&gt;While hunting you find a **Feather!** Maybe it’s good luck?&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD35">
+                      <block type="jg_text_remake_paragraph_quotes" id="T8vwG0+Yokie(wJ-zVX*">
+                        <field name="TEXT">&gt;&gt;&gt;You find a patch of **Small Flowers** and pick them. &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD36">
+                      <block type="jg_text_remake_paragraph_quotes" id="$@%54{{4T4`|:Xa%K6.?">
+                        <field name="TEXT">&gt;&gt;&gt;You frolic through the hunting grounds and find some **Small Flowers**, aw pretty!&amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD37">
+                      <block type="jg_text_remake_paragraph_quotes" id="1Q|m1Sc%(Nu`j+0#r%pv">
+                        <field name="TEXT">&gt;&gt;&gt;You find something dead, you collect **Bone Shards** from it! &amp;#10;</field>
+                      </block>
+                    </value>
+                    <value name="ADD38">
+                      <block type="jg_text_remake_paragraph_quotes" id="ieC4K.)a_dIiWWKhYHuY">
+                        <field name="TEXT">&gt;&gt;&gt;After awhile of walking you settle down, only to find some **Bone Shards**, maybe keep walking… &amp;#10;</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="s4d_reply" id="O}^-0Nx7:]O0zm7zq@%z">
+                    <value name="CONTENT">
+                      <shadow type="text" id="4QK93;l-jyq7deQ-1A|U">
+                        <field name="TEXT">Hey!</field>
+                      </shadow>
+                      <block type="lists_getIndex" id="izVxTvz]QHu9E1sF2!S_">
+                        <mutation statement="false" at="false"></mutation>
+                        <field name="MODE">GET</field>
+                        <field name="WHERE">RANDOM</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="5T~2++`{~WzrAW*UjDyX">
+                            <field name="VAR" id="!#)KUG@N@`dkb|0~e.1t">pines</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
